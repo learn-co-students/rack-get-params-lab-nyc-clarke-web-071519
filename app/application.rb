@@ -28,7 +28,7 @@ class Application
     elsif req.path.match(/add/)
       item_to_add = req.params["item"]
   #This should check to see if that item is in @@items and then add it to the cart if it is. Otherwise give an error
-      if @@items.include? item_to_add
+      if @@items.include? (item_to_add)
         @@cart << item_to_add
         resp.write "added #{item_to_add}"
       else 
